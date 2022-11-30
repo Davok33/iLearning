@@ -1,0 +1,100 @@
+*{
+margin: 0px;
+box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 900px;
+    /* outline: 2px solid; */
+    margin: 40px auto;
+
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* grid-template-rows: repeat(5, 1fr); */
+    gap:10px;
+
+ 
+
+    /* grid-template-areas: 
+    "d1 d1 d1 d2 d2"
+    "d1 d1 d1 d2 d2"
+    "d3 d3 d3 d2 d2"
+    "d3 d3 d3 d2 d2"
+    "d4 d4 d4 d4 d4"
+    ; */
+
+    /* Crear varias columnas o filas a la vez: grid-template-columns: repeat(10, 10%);  el primer valor de repeat es el numero de columnas y el segundo el ancho */
+    /* unidad de medida 'fr' fraccion, ejm -- grid-template-columns: 1fr 1fr 1fr tres columnas de 1 fraccion toma todo el espacio disponible y lo divide en tres o las fracciones que se asignen */
+    /* row-gap: 1px; espaciado entre filas y column-gap: 1px; espaciado entre columnas, gap:1px 1px es para todos, si se ponen dos el primer valor filas y el otro columnas sy se deja solo 1 para todo  */
+    /* grid-column: empieza en la columna de la línea y finaliza, ejm: 1 / 3 = empieza en la linea 1 y finaliza en la 3, grid-row: es para filas */
+    /* en areas siempre se deben de poner el total de comillas por el numero de columnas que hay en este caso 5 */
+    /* Se va a cada item en este caso y se pone grid-area: y el nombre 'd1' o 'd2' con el cual le dimos  */
+    /* grid-columns: repeat(auto-fit) permite crear columnas que se ajusten a un tamaño */
+    /* minmax(250px, 1fr) es el espacio minimo disponible de la columna ejm grid-columns: repeat(auto-fit), minmax(300px, 1fr) minimo de la columna 300 que sea en 1 fraccion y se divida con el auto-fit */
+}
+
+.item{
+    /* width: 100%; 
+    height: 1200px;  */
+    color: #fff;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+ 
+}
+
+.item1{
+    background-color: rgb(132, 248, 248);
+    /* grid-column: 1 / 4;
+    grid-row: 1 / 3; */
+    /* grid-area: d1; */
+    background-image: url(img/digimon1.jpeg);
+}
+.item2{
+    background-color: rgb(43, 189, 77);
+    /* grid-column: 4 / 6;
+    grid-row: 1 / 5; */
+    /* grid-area: d2; */
+    background-image: url(img/digimon2.jpeg);
+}
+.item3{
+    background-color: rgb(194, 230, 85);
+    /* grid-column: 1 / 4;
+    grid-row: 3 /   5; */
+    /* grid-area: d3; */
+    background-image: url(img/digimon3.jpeg);
+}
+.item4{
+    background-color: rgb(156, 71, 213);
+    /* grid-column: 1 / 6; */
+    background-image: url(img/digimon4.jpeg);
+}
+.item5{
+    background-color: rgb(213, 106, 47);
+    background-image: url(img/digimon5.jpeg);
+}
+.item6{
+    background-color: rgb(48, 151, 206);
+    background-image: url(img/digimon6.jpeg);
+}
+
+/* @media (min-width: 700px){
+
+    .container{
+        grid-template-areas: 
+        "d1 d1 d1 d2 d2"
+        "d1 d1 d1 d2 d2"
+        "d3 d3 d3 d2 d2"
+        "d3 d3 d3 d2 d2"
+        "d4 d4 d4 d2 d2";
+    }
+} */
+        /* Basta solo con modificar las areas para que ocupen el espacio que se desea */
