@@ -1,3 +1,15 @@
+<?php 
+session_start(); //nos permite manejar el login de nuestro sitio web
+  if(!isset($_SESSION['user'])){ //si la sesion tiene informacion --- Busca esa informacion si existe y si la tiene se ejecuta
+    header("Location:../index.php");  //si no hay usuario logeado me envías allá // cuando valide que ya hay una variable con nombre "ok" puedo entrar a index.php del admin
+  }else{
+    if($_SESSION['user'] == "ok"){ //si esa variable tiene el nombre "ok", puede pasar
+      $userName = $_SESSION["userName"]; //
+    }
+
+  }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>

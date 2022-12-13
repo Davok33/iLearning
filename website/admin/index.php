@@ -1,6 +1,16 @@
 <?php
-if($_POST){     //si hay un metodo POST 
-    header('Location:home.php');    //enviar a dicha localizacion
+session_start();
+if($_POST){     //si hay un metodo POST (envio)    
+    if($_POST){
+        if(($_POST['user'] == 'davok')&&($_POST['password'] == 'admin')){ //validacion de que exista el user y el password en la bbdd
+            
+            $_SESSION['user'] = "ok";  //creamos esas variables que le digan al header que ya estamos logeados, tiene el valor de "ok" para que me deje entrar en header.php porque es donde me pregunta
+            $_SESSION['userName'] = "Davok";
+            header('Location:home.php');
+        }else {
+            $message = "Error: usuario y contraseña incorrectos";
+        }
+    }  
 }
 ?>
  <!-- b4-$ esctructura del html -->
@@ -30,7 +40,11 @@ if($_POST){     //si hay un metodo POST
                     Login
                 </div>
                 <div class="card-body">
-
+                <?php if(isset($message)){ ?> <!-- si hay algo, muestra lo siguiente -->
+                    <div class="alert alert-danger" role="alert">
+                       <?php echo $message; ?>
+                    </div>     
+                <?php } ?>
                  <!-- !crt-form crea formulario-->
                     <form method="POST">
 
